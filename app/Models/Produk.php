@@ -25,7 +25,8 @@ class Produk extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'nama', 'slug', 'kategori_id', 'has_variasi', 'var1_nama', 'var2_nama', 'var1_value', 'var2_value', 'harga'
+        'nama', 'slug', 'kategori_id', 'has_variasi', 'var1_nama', 'var2_nama', 'var1_value', 'var2_value', 'harga',
+        'berat', 'berat_satuan', 'material', 'kode', 'ukuran', 'kadar', 'jenis_permata', 'berat_permata'
     ];
 
     protected $appends = [

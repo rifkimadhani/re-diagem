@@ -85,6 +85,9 @@ class ProdukController extends Controller
             'kategori' => 'required',
             'foto.0' => 'required',
             'berat' => 'required',
+            'material' => 'required',
+            'kode' => 'required',
+            'kadar' => 'required',
         ];
 
         $pesan = [
@@ -94,6 +97,10 @@ class ProdukController extends Controller
             'kategori.required' => 'Kategori Produk Wajib Diisi!',
             'foto.0.required' => 'Foto Utama Produk Wajib Diisi!',
             'berat.required' => 'Berat Produk Wajib Diisi!',
+            'material.required' => 'Metrial Produk wajib Diisi',
+            'kode.required' => 'Kode Produk Wajib Diisi',
+            'kadar' => 'Kadar (fineness) Produk Wajib Diisi'
+
         ];
 
         if($request->is_variasi === '0')
@@ -128,12 +135,18 @@ class ProdukController extends Controller
         }else{
             DB::beginTransaction();
             try{
-
                 $Produkdata = array(
                     'nama' => $request->nama,
                     'kategori_id' => $request->kategori,
                     'has_variasi' => $request->is_variasi,
                     'deskripsi' => $request->deskripsi,
+                    'kadar' => $request->kadar,
+                    'material' => $request->material,
+                    'stok' => $request->stok,
+                    'kode' => $request->kode,
+                    'ukuran' => $request->ukuran,
+                    'jenis_permata' => $request->jenis_permata,
+                    'berat_permata' => $request->berat_permata,
                 );
 
                 $produk = Produk::create($Produkdata);
@@ -212,6 +225,7 @@ class ProdukController extends Controller
             ]);
         }
     }
+
     public function edit($produk_id)
     {
         $produk = Produk::find($produk_id);
@@ -242,12 +256,10 @@ class ProdukController extends Controller
         }
         $variasi = ProdukVariasi::where('produk_id', $produk->id)->get()->toArray();
         return view('admin.produk.edit', compact('produk', 'kategori', 'foto', 'variasi'));
-        // }
     }
 
     public function update(Request $request)
     {
-        // dd($request->all());
         $rules = [
             'nama' => 'required',
             'deskripsi' => 'required|min:100',
@@ -319,6 +331,7 @@ class ProdukController extends Controller
                 $produk = Produk::find($request->produk_id);
                 $produk->nama = $request->nama;
                 $produk->kategori_id = $request->kategori;
+                $produk->stok = $request->stok;
                 $dom = new \domdocument();
                 libxml_use_internal_errors(true);
                 $dom->loadHtml($request->deskripsi, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
@@ -330,6 +343,12 @@ class ProdukController extends Controller
                 $produk->panjang = $request->panjang;
                 $produk->lebar = $request->lebar;
                 $produk->tinggi = $request->tinggi;
+                $produk->kadar = $request->kadar;
+                $produk->material = $request->material;
+                $produk->kode = $request->kode;
+                $produk->ukuran = $request->ukuran;
+                $produk->jenis_permata = $request->jenis_permata;
+                $produk->berat_permata = $request->berat_permata;
                 $produk->save();
 
                 if($request->foto_hapus)

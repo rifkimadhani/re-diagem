@@ -39,6 +39,7 @@
                             <strong>1. Informasi Produk</strong>
                         </div>
                     </div>
+
                     <div class="block-content pb-15">
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label" for="field-nama">Nama Produk</label>
@@ -47,6 +48,7 @@
                                 <div class="invalid-feedback font-size-sm" id="error-nama">Invalid feedback</div>
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label" for="field-deskripsi">Deskripsi Produk</label>
                             <div class="col-lg-9">
@@ -54,6 +56,7 @@
                                 <div class="invalid-feedback font-size-sm" id="error-deskripsi">Invalid feedback</div>
                             </div>
                         </div>
+
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label" for="field-kategori">Kategori Produk</label>
                             <div class="col-lg-9">
@@ -63,6 +66,55 @@
                                 <input type="hidden" name="subsubcategory_id" id="subsubcategory_id" value="">
                                 <input type="hidden" name="kategori" id="kategori_id" value="{{ $produk->kategori_id }}">
                                 <div class="text-danger font-size-sm" id="error-kategori"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label" for="field-kode">Kode Produk</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="field-kode" name="kode" placeholder="Masukan Kode Produk" autocomplete="off" value="{{ $produk->kode }}">
+                                <div class="invalid-feedback font-size-sm" id="error-kode">Invalid feedback</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label" for="field-material">Material</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="field-material" name="material" placeholder="Masukan material Produk" autocomplete="off" value="{{ $produk->material }}">
+                                <div class="invalid-feedback font-size-sm" id="error-material">Invalid feedback</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label" for="field-ukuran">Ukuran</label>
+                            <div class="col-lg-9">
+                                <input type="number" class="form-control" id="field-ukuran" name="ukuran" placeholder="Masukan Ukuran Produk" autocomplete="off" value="{{ $produk->ukuran }}">
+                                <div class="invalid-feedback font-size-sm" id="error-ukuran">Invalid feedback</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label" for="field-kadar">Kadar</label>
+                            <div class="col-lg-9">
+                                <input type="number" class="form-control" id="field-kadar" name="kadar" placeholder="Masukan Kadar(Fineness) Produk" autocomplete="off" value="{{ $produk->kadar }}">
+                                <div class="invalid-feedback font-size-sm" id="error-kadar">Invalid feedback</div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label" for="field-jenis_permata">Jenis Permata</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="field-jenis_permata" name="jenis_permata" placeholder="Masukan Jenis Batu Permata Produk" autocomplete="off" value="{{ $produk->jenis_permata }}">
+                                <div class="invalid-feedback font-size-sm" id="error-jenis_permata">Invalid feedback</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label" for="field-berat_permata">Berat Permata</label>
+                            <div class="col-lg-9">
+                                <input type="number" class="form-control" id="field-berat_permata" name="berat_permata" placeholder="Masukan Berat Permata Produk" autocomplete="off" value="{{ $produk->berat_permata }}">
+                                <div class="invalid-feedback font-size-sm" id="error-berat_permata">Invalid feedback</div>
                             </div>
                         </div>
                     </div>
