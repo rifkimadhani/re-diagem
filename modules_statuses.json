@@ -1,0 +1,20 @@
+{
+    "Page": true,
+    "User": true,
+    "Mitra": true,
+    "Admin": true,
+    "Produk": true,
+    "Kategori": true,
+    "Media": true,
+    "Wilayah": true,
+    "Pengaturan": true,
+    "Driver": true,
+    "Chat": true,
+    "Keuangan": true,
+    "Order": true,
+    "Transaksi": true,
+    "FlashSale": true,
+    "Review": true,
+    "Promo": true,
+    "Account": true
+}
