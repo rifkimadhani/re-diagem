@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notifiable;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 // use App\Notifications\AdminEmailVerificationNotification;
@@ -20,7 +20,7 @@ class Mitra extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nama', 'username', 'hp', 'email', 'password',
+        'nama', 'username', 'kontak', 'email', 'password', 'alamat'
     ];
 
     /**

@@ -15,13 +15,6 @@ Route::prefix('mitra')->name('mitra.')->namespace('Mitra\Auth')->group(function(
     Route::get('/login','LoginController@showLoginForm')->name('login');
     Route::post('/login','LoginController@login')->name('loginPost');
 });
-Route::middleware(['CheckIfMitra'])->prefix('mitra')->name('mitra.')->namespace('Mitra\Auth')->group(function(){
-    Route::get('/', 'PendaftaranController@index')->name('daftar');
-    Route::post('/daftar-1', 'PendaftaranController@step1')->name('daftarStep1');
-    Route::post('/daftar-2', 'PendaftaranController@step2')->name('daftarStep2');
-    Route::post('/daftar/cek-username', 'PendaftaranController@postCheckUsername')->name('postCheckUsername');
-    Route::post('/daftar/cek-email', 'PendaftaranController@postCheckEmail')->name('postCheckEmail');
-});
 
 Route::prefix('mitra')->name('mitra.')->namespace('Mitra')->group(function() {
     Route::get('/beranda','BerandaController@index')->name('beranda');
@@ -31,8 +24,6 @@ Route::prefix('mitra')->name('mitra.')->namespace('Mitra')->group(function() {
     Route::group(['prefix' => 'promosi'], function () {
         Route::get('/','PromosiController@index')->name('promosi');
     });
-
-    
 
     Route::group(['prefix' => 'toko'], function () {
         Route::get('/','TokoController@index')->name('toko.profil');
@@ -46,6 +37,4 @@ Route::prefix('mitra')->name('mitra.')->namespace('Mitra')->group(function() {
             Route::get('/hapus/{id}', 'EtalaseTokoController@hapus')->name('etalase.hapus');
         });
     });
-
-
 });

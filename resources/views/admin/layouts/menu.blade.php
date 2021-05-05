@@ -38,6 +38,11 @@
             <i class="si si-people"></i>User</span>
         </a>
     </li>
+    <li>
+        <a class="{{ Request::is('admin/reseller', 'admin/reseller/*') ? 'active' : null }}" href="http://localhost/re-diagem/admin/reseller">
+            <i class="si si-people"></i>Reseller</span>
+        </a>
+    </li>
     <li class="{{ Request::is('admin/keuangan/*','admin/keuangan') ? 'open' : null }}">
         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-wallet"></i>Keuangan</span></a>
         <ul>

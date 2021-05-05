@@ -1,7 +1,6 @@
 <?php
 
 /* ----------------------- Admin Routes START -------------------------------- */
-
 Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::namespace('Auth')->group(function(){
 
@@ -71,7 +70,6 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     });
 
     Route::group(['prefix' => 'keuangan'], function () {
-
         Route::group(['prefix' => 'rekening-bank'], function () {
             Route::get('/','RekeningController@index')->name('rekening');
             Route::post('/simpan', 'RekeningController@simpan')->name('rekening.simpan');
@@ -80,13 +78,16 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
             Route::get('/hapus/{id}', 'RekeningController@hapus')->name('rekening.hapus');
             Route::post('/bank', 'RekeningController@bank')->name('rekening.bank');
         });
-        
     });
 
-
-
-    
-
+    Route::group(['prefix' => 'reseller'], function() {
+        Route::get('/', 'MitraController@index');
+        Route::get('/tambah', 'MitraController@tambah');
+        Route::post('/simpan', 'MitraController@simpan');
+        Route::get('/edit/{mitra_id}', 'MitraController@edit');
+        Route::post('/update', 'MitraController@update');
+        Route::post('/update-password', 'MitraController@update_password');
+        Route::get('/delete/{mitra_id}', 'MitraController@delete');
+    });
 });
-
 /* ----------------------- Admin Routes END -------------------------------- */

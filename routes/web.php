@@ -2,13 +2,13 @@
 
 use Kavist\RajaOngkir\Facades\RajaOngkir;
 /* --------------------- Common/User Routes START -------------------------------- */
-// Route::get('/coba', function () {
-// });
 Route::prefix('wilayah')->group(function() {
     Route::post('/jsonSelect', 'WilayahController@jsonSelect')->name('wilayah.jsonSelect');
 });
+
 Route::namespace('Umum')->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
+
     Route::namespace('Auth')->group(function(){
 
         //Login Routes
@@ -33,6 +33,7 @@ Route::namespace('Umum')->group(function(){
         // Route::get('email/verify/{id}','VerificationController@verify')->name('verification.verify');
         // Route::get('email/resend','VerificationController@resend')->name('verification.resend');
     });
+
     Route::name('user.')->prefix('user')->group(function () {
         Route::get('/','UserController@index')->name('index');
         Route::get('/profil','UserController@profil')->name('profil');
@@ -69,6 +70,7 @@ Route::namespace('Umum')->group(function(){
     Route::post('/variant_price', 'ProdukController@variant_price')->name('variant_price');
 
     Route::post('/top-data', 'KategoriController@cartTop_data')->name('cart.top_data');
+
     Route::group(['prefix' => 'c'], function () {
         Route::get('/{kategori}', 'KategoriController@index')->name('kategori.detail');
         Route::post('/sub_kategori_json', 'KategoriController@sub_kategori_json')->name('kategori.sub_kategori_json');
