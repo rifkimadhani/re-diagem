@@ -83,6 +83,48 @@
             </div>
         </div>
     </form>
+
+
+    <form id="mitra-password" onsubmit="return false;">
+        <input type="hidden" name="total_variasi" id="total_variasi" value="1">
+        <div class="content-heading pt-0 mb-3">
+            Ganti Password Reseller
+            <button type="submit" class="btn btn-primary float-right mr-5">
+                <i class="si si-paper-plane mr-1"></i>
+                Ganti
+            </button>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="block block-rounded">
+                    <div class="block-header block-header-default">
+                        <div class="block-title">
+                            <strong>Ganti Password</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="block-content pb-15">
+                        <input type="hidden" name="id" value="{{ $mitra->id }}">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label" for="field-password">Password Baru</label>
+                            <div class="col-lg-9">
+                                <input type="password" class="form-control" id="field-password" name="password" placeholder="Masukan Password Baru Reseller" autocomplete="off">
+                                <div class="invalid-feedback font-size-sm" id="error-password">Invalid feedback</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label" for="field-conf_password">Konfirmasi Password Baru</label>
+                            <div class="col-lg-9">
+                                <input type="password" class="form-control" id="field-conf_password" name="conf_password" placeholder="Masukan Nama Reseller" autocomplete="off">
+                                <div class="invalid-feedback font-size-sm" id="error-conf_password">Invalid feedback</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>    
 </div>
 @endsection
 
@@ -93,5 +135,5 @@
 <script src="{{ asset('public/js/plugins/bootstrap-taginput/tagsinput.js') }}"></script>
 <script src="{{ asset('public/js/plugins/jquery-rowspanizer/jquery.rowspanizer.min.js') }}"></script>
 <script src="{{ asset('public/js/plugins/summernote/summernote-bs4.min.js') }}"></script>
-<script src="{{ asset('public/js/admin/mitra/mitra-edit.js') }}"></script>
+<script src="{{ asset('public/js/admin/mitra/mitra-password.js') }}"></script>
 @endpush
