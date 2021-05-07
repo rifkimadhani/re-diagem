@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Mitra;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
-
 
 class MitraController extends Controller
 {
@@ -20,7 +19,7 @@ class MitraController extends Controller
 
     public function index(Request $request){
         if ($request->ajax()){
-            $data = Mitra::latest()->get();
+            $data = User::latest()->get();
             return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('nama', function($row){
@@ -111,7 +110,7 @@ class MitraController extends Controller
     }
     
     public function edit($mitra_id){
-        $mitra = Mitra::find($mitra_id);
+        $mitra = User::find($mitra_id);
         return view('admin.mitra.edit', compact('mitra'));
     }
 
@@ -186,7 +185,7 @@ class MitraController extends Controller
         } else {
             DB::beginTransaction();
             try {
-                $mitra = Mitra::find($request->id);
+                $mitra = User::find($request->id);
                 $mitra->password = Hash::make($request->password);
                 $mitra->save();
             } catch (\QueryException $e) {
@@ -205,7 +204,7 @@ class MitraController extends Controller
     public function delete($mitra_id){
         DB::beginTransaction();
         try {
-            Mitra::destroy($mitra_id);
+            User::destroy($mitra_id);
         } catch (\QueryException $e) {
             DB::rollback();
             return response()->json([
