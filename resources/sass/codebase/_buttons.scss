@@ -98,3 +98,12 @@
 .sidebar-inverse #sidebar .btn-dual-secondary {
     @include button-dual-variant($white, $brand-darker);
 }
+
+.file-upload {
+  width: 100%;
+  padding: 10px 0px;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}

@@ -81,5 +81,10 @@ Route::namespace('Umum')->group(function(){
         Route::get('/{slug}', 'PromoController@detail')->name('promo.detail');
     });
 
-    Route::get('/{produk}', 'ProdukController@detail')->name('produk.detail');
+    Route::group(['prefix' => 'product'], function (){
+        Route::get('/', 'ProdukController@index')->name('product');
+        Route::get('/{produk}', 'ProdukController@detail')->name('product.detail');
+    });
+    // Route::get('/produk', 'ProdukController@detail')->name('produk.detail');
+    // Route::get('/{produk}', 'ProdukController@detail')->name('produk.detail');
 });

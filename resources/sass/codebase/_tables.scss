@@ -59,3 +59,39 @@
         }
     }
 }
+
+
+// Table Hover 2
+.table-hover-2 {
+    tbody tr {
+        @include hover() {
+            color: $table-hover-color;
+            transform: scale(1.01);
+        }
+
+        background:white;
+        cursor:pointer;
+
+        &:first-child {
+            td {
+                &:first-child {
+                    border-top-left-radius: 10px;
+                }
+                &:last-child {
+                    border-top-right-radius: 10px;
+                }
+            }
+        }
+        &:last-child {
+            td {
+                &:first-child {
+                    border-bottom-left-radius: 10px;
+                }
+                &:last-child {
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+
+    }
+}

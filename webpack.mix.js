@@ -1,15 +1,17 @@
 const mix = require('laravel-mix');
 mix
     /* CSS Backend*/
-    .sass('resources/sass/main.scss', 'public/assets/css/codebase.css')
-    .sass('resources/sass/codebase/themes/corporate.scss', 'public/assets/css/themes/')
-    .sass('resources/sass/codebase/themes/earth.scss', 'public/assets/css/themes/')
-    .sass('resources/sass/codebase/themes/elegance.scss', 'public/assets/css/themes/')
-    .sass('resources/sass/codebase/themes/flat.scss', 'public/assets/css/themes/')
-    .sass('resources/sass/codebase/themes/pulse.scss', 'public/assets/css/themes/')
+    
+    .sass('resources/sass/main.scss', 'public/css/app.css')
+    .sass('resources/sass/codebase/themes/corporate.scss', 'public/css/themes/')
+    .sass('resources/sass/codebase/themes/earth.scss', 'public/css/themes/')
+    .sass('resources/sass/codebase/themes/elegance.scss', 'public/css/themes/')
+    .sass('resources/sass/codebase/themes/flat.scss', 'public/css/themes/')
+    .sass('resources/sass/codebase/themes/pulse.scss', 'public/css/themes/')
 
-    /* JS Backend*/
-    .js('resources/js/codebase/app.js', 'public/assets/js/codebase.app.js')
+    /* JS*/
+    .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
+    .js('resources/js/app.js', 'public/js/laravel.app.js')
 
     /* CSS Frontend */
     .js('resources/js/pages/tables_datatables.js', 'public/assets/js/pages/tables_datatables.js')

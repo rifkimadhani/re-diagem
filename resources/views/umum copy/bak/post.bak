@@ -1,0 +1,40 @@
+    <div class="mb-3">
+        <ul class="row list-unstyled products-group no-gutters">
+            @for($i=0; $i < 6; $i++) <li class="col-6 col-md-4 col-lg-3 col-xl product-item">
+                <div class="product-item__outer h-100">
+                    <div class="product-item__inner">
+                        <div class="product-item__body pb-xl-2">
+                            <div class="mb-2">
+                                <a href="../shop/single-product-fullwidth.html" class="d-block text-center">
+                                    <img class="img-fluid" src="https://via.placeholder.com/200x200.png"
+                                        alt="Image Description">
+                                </a>
+                            </div>
+                            <div class="px-2">
+                                <h5 class="mb-1 product-item__title">
+                                    <a href="../shop/single-product-fullwidth.html" class="font-weight-bold">
+                                        Wireless Audio System Multiroom 360 degree Full base audio</a>
+                                </h5>
+                                <div class="flex-center-between mb-1">
+                                    <div class="prodcut-price">
+                                        <div class="text-gray-100">$685,00</div>
+                                    </div>
+                                </div>
+                                <span class="d-inline-flex align-items-center small font-size-14">
+                                    <div class="text-warning mr-2">
+                                        <small class="fas fa-star"></small>
+                                        <small class="fas fa-star"></small>
+                                        <small class="fas fa-star"></small>
+                                        <small class="fas fa-star"></small>
+                                        <small class="far fa-star text-muted"></small>
+                                    </div>
+                                    <span class="text-secondary">(40)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </li>
+                @endfor
+        </ul>
+    </div>

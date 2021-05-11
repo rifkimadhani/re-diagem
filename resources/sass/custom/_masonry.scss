@@ -1,0 +1,23 @@
+
+
+@include media-breakpoint-up(sm) {
+    .gal-masonry {
+        column-count: 1;
+    }
+}
+
+@include media-breakpoint-up(md) { 
+    .gal-masonry {
+        column-count: 3;
+    }
+}
+
+@include media-breakpoint-up(lg) { 
+    .gal-masonry {
+        column-count: 4;
+    }
+}
+
+.gal-img {
+    border-radius: 10px;
+}

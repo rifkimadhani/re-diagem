@@ -15,9 +15,25 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
- import jQuery from 'jquery';
+import jQuery from 'jquery';
+import SimpleBar from 'simplebar';
+import Cookies from 'js-cookie';
+import 'bootstrap';
+import 'popper.js';
+import 'jquery.appear';
+import 'jquery-scroll-lock';
+import 'jquery-countto';
+import 'sharer.js';
+// requiresel
+// ..and assign to window the ones that need it
  window.$ = window.jQuery    = jQuery;
-
+ window.SimpleBar            = SimpleBar;
+ window.Cookies              = Cookies;
+ window.lozad                = require('lozad');
+ window.Swal                 = require('sweetalert2');
+ window.Tools                = require('./modules/tools');
+ window.Helpers              = require('./modules/helpers');
+ 
 // import Echo from 'laravel-echo';
 
 // window.Pusher = require('pusher-js');

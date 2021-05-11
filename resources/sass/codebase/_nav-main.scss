@@ -181,14 +181,17 @@
     @include media-breakpoint-up(lg) {
         margin: 0 -3px;
         padding: 0;
-        display: inline-block;
-        list-style: none;
-        vertical-align: middle;
+        display: flex;
+        align-items: center;
 
         li {
             position: relative;
-            display: inline-block;
             margin: 0 3px;
+            height: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
         }
 
         // Default links
@@ -238,11 +241,12 @@
             top: 100%;
             left: 0;
             margin: 0;
-            padding: 15px 0;
+            padding: 10px 0;
             display: none;
             z-index: $zindex-sidebar;
 
             li {
+                width:200px;
                 display: block;
                 margin: 0;
             }
@@ -250,7 +254,7 @@
             a {
                 display: block;
                 border-radius: 0;
-                min-width: 160px;
+                min-width: 260px;
 
                 &.nav-submenu::before {
                     content: '\f105';
@@ -298,7 +302,7 @@
         }
 
         ul a {
-            color: lighten($body-color, 22%);
+            color: $white;
         }
 
         a:hover,
@@ -307,23 +311,30 @@
         li.open > a.nav-submenu,
         li:hover > a.nav-submenu {
             color: $black;
-            background-color: $body-bg-dark;
+            // background-color: $body-bg-dark;
         }
 
-        ul,
-        > li:hover > a.nav-submenu {
-            background-color: darken($body-bg-dark, 3%);
+        ul {
+            background-color: #0e9a46;
+
+            li:hover {
+                background-color: #fff;
+
+                a {
+                    color :#0e9a46;
+                }
+            }
         }
 
         @at-root {
             .page-header-inverse #page-header &,
             .page-header-inverse.page-header-glass.page-header-scroll #page-header & {
                 a {
-                    color: darken($body-color-light, 9%);
+                    color: $white;
                 }
 
                 ul a {
-                    color: darken($body-color-light, 18%);
+                    color: $white;
                 }
 
                 a:hover,
@@ -332,12 +343,12 @@
                 li.open > a.nav-submenu,
                 li:hover > a.nav-submenu {
                     color: $white;
-                    background-color: rgba(0,0,0,.25);
+                    background-color: rgba(0,0,0,.20);
                 }
 
                 ul,
                 > li:hover > a.nav-submenu {
-                    background-color: $brand-dark;
+                    background-color: #ad3439;
                 }
             }
         }
@@ -345,7 +356,7 @@
         @at-root .page-header-inverse.page-header-glass #page-header & {
             ul,
             > li:hover > a.nav-submenu {
-                background-color: darken($brand-dark, 5%);
+                background-color: darken(#ad3439, 5%);
             }
         }
 

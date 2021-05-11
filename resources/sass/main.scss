@@ -81,6 +81,7 @@
 @import 'codebase/layout-variations';
 @import 'codebase/hero';
 @import 'codebase/block';
+@import 'codebase/product';
 
 // Codebase components
 @import 'codebase/page-loader';
@@ -101,8 +102,8 @@
 // Third party components
 @import 'vendor/animate';
 @import 'vendor/simple-line-icons';
-@import 'vendor/font-awesome';
-//@import 'vendor/font-awesome5';
+// @import 'vendor/font-awesome';
+@import 'vendor/font-awesome5';
 
 // Third party plugins (style overrides)
 @import 'vendor/bootstrap-datepicker';
@@ -128,3 +129,7 @@
 
 // User styles (your own styles/overrides)
 @import 'custom/main';
+@import 'custom/social-media';
+@import 'custom/posts';
+@import 'custom/icon';
+@import 'custom/masonry';
