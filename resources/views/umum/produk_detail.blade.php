@@ -13,7 +13,7 @@
         <!-- Single Product Body -->
         <div class="border-lg-down-0 card mb-lg-4 p-lg-3 shadow-lg shadow-none">
             <div class="row">
-                <div class="col-md-4 mb-1">
+                <div class="col-lg-5 mb-1">
                     <div id="sliderSyncingNav" class="js-slick-carousel u-slick mb-2"
                         data-infinite="true"
                         data-nav-for="#sliderSyncingThumb">
@@ -36,7 +36,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-md-7 mb-md-6 mb-lg-0">
+                <div class="col-lg-7">
                     <div class="mb-2 product-body">
                         <div class="border-bottom mb-lg-3 pb-md-1 pb-lg-3">
                             <h2 class="font-size-24-lg font-size-14-down-lg font-weight-bold">{{ $produk->nama }}</h2>

@@ -15,7 +15,7 @@
         {{--  --}}
         <!-- Fonts and Codebase framework -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
-        <link rel="stylesheet" id="css-main" href="{{ asset('public/css/codebase.css') }}">
+        <link rel="stylesheet" id="css-main" href="{{ asset('public/css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('public/js/plugins/sweetalert2/sweetalert2.min.css') }}">
         <!-- Scripts -->
         <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};</script>
@@ -55,13 +55,12 @@
             </footer>
             <!-- END Footer -->
         </div>
+        <script src="{{ asset('public/js/laravel.app.js') }}"></script>
         <script src="{{ asset('public/js/laroute.js') }}"></script>
-        <script src="{{ asset('public/js/codebase.app.js') }}"></script>
         <script src="{{ asset('public/js/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
-        <script src="{{ asset('public/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ asset('public/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ asset('public/js/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
-        <script src="{{ asset('public/js/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+        {{-- <script src="{{ asset('public/js/plugins/datatables/jquery.dataTables.min.js') }}"></script> --}}
+        {{-- <script src="{{ asset('public/js/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script> --}}
+        <script src="{{ asset('public/djs/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
         <script src="{{ asset('public/js/plugins/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
         <script src="{{ asset('public/js/common.js') }}"></script>
         <script src="{{ asset('public/js/functions.js') }}"></script>

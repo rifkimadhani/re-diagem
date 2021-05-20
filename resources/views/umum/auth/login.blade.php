@@ -3,16 +3,16 @@
 @endsection
 
 @section('content')
-<main id="content" role="main">
-    <div class="container my-3 my-lg-11">
-        <div class="row my-5 justify-content-between">
-            <div class="col-md-4 d-none d-lg-block text-center">
-                <img src="{{ asset('assets/img/auth.png') }}" alt="" class="img-fluid">
-            </div>
-            <div class="col-lg-4">
-                <h3 class="mb-0 pb-2 font-size-26 text-center">Masuk ke akun kamu</h3>
-                <div class="border-lg-down-0 card">
-                    <div class="card-body">
+<div class="py-lg-6">
+    <div class="content content-full">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="block block-rounded block-shadow-2">
+                    <div class="block-content block-content-full">
+                        <div class="text-center">
+                            <h2 class="font-weight-bold mb-0">Masuk Ke Akun Kamu</h2>
+                            <p>Belum punya akun? <a href="{{ route('register') }}">Daftar</a> di sini</p>
+                        </div>
                         <form id="form-login" onsubmit="return false;">
                             @csrf
                             <div class="form-group">
@@ -40,10 +40,10 @@
             </div>
         </div>
     </div>
-</main>
+</div>
 @stop
 
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-<script src="{{ asset('assets/js/umum/auth/login.js') }}"></script>
+<script src="{{ asset('public/js/umum/auth/login.js') }}"></script>
 @endpush

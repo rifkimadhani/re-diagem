@@ -14,7 +14,7 @@ $(document).ready(function() {
                 Swal.fire({
                     title: 'Tunggu Sebentar...',
                     text: 'Data Sedang Diproses!',
-                    imageUrl: laroute.url('assets/img/loading.gif', ['']),
+                    imageUrl: laroute.url('public/img/loading.gif', ['']),
                     showConfirmButton: false,
                     allowOutsideClick: false,
                 });

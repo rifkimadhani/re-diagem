@@ -1,0 +1,103 @@
+.product {
+	-webkit-box-align: stretch;
+	align-items: stretch;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 25px;
+	box-sizing: border-box;
+	margin: 0px;
+	border-radius: 10px;
+	cursor: pointer;
+    
+	.product-content {
+		&:hover {
+			border-radius: 10px;
+			border: 1px solid #e4e7ed;
+			box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 10%);
+		}
+		height: 100%;
+		background-color: #FFFFFF;
+		border-radius: 10px;
+		box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 10%);
+
+		.product-img {
+			img {
+				border-radius: 10px 10px 0 0;
+			}
+		}
+
+		.product-title {
+			margin-bottom: 4px;
+			font-weight: 600;
+			font-size: 0.96rem;
+			color: rgba(49, 53, 59, 0.96);
+			max-width: 100%;
+			max-height: 100%;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: pre-wrap;
+			line-height: 1.5;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+		}
+		.product-price {
+			-webkit-box-pack: justify;
+			justify-content: space-between;
+			-webkit-box-align: center;
+			margin-bottom: 4px;
+			color: #f37021;
+			opacity: 1;
+			font-size: 1rem;
+			font-weight: bold;
+			align-items: flex-end;
+			line-height: 1.43;
+		}
+	}
+	.product-info {
+		padding: 8px;
+		height: auto;
+		vertical-align: middle;
+		width: 100%;
+		position: relative;
+		display: flex;
+		flex: 1 1 0%;
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+.product-slides {
+	margin-bottom: 1.5rem;
+	.item-detail {
+		img {
+			border-radius: 10px;
+		}
+		.zoomImg {
+			border-radius: 10px !important;
+		}
+	}
+}
+.product-slides-nav {
+	position: relative;
+	margin-top: 8px;
+	.slider-nav__item {
+		width: 64px;
+		height: 64px;
+		border-radius: 8px;
+		margin-right: 7px;
+		overflow: hidden;
+		cursor: pointer;
+		border-width: 2px;
+		border-style: solid;
+		border-image: initial;
+		transition: border-color 0.25s ease 0s;
+		border-color: var(--N0,#FFFFFF);
+		position: relative;
+		text-align: center;
+	}
+	.slider-nav__item.slick-current {
+		border-color: $brand-primary;
+	}
+}
+

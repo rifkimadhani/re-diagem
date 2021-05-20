@@ -3,19 +3,16 @@
 @endsection
 
 @section('content')
-<main id="content" role="main">
-    <div class="container my-3 my-lg-8">
-        <div class="cart_title text-center">
-            <h2 class="font-weight-bold">Daftar Sekarang</h2>
-            <p>Sudah punya akun AsoyMart? <a href="">Login</a> di sini</p>
-        </div>
-        <div class="row my-5 justify-content-between">
-            <div class="col-md-4 d-none d-lg-block">
-                <img src="{{ asset('assets/img/register.png') }}" alt="" class="img-fluid">
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
+<div class="py-lg-6">
+    <div class="content">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="block block-shadow-2 block-rounded-2">
+                    <div class="block-content block-content-full">
+                        <div class="text-center">
+                            <h2 class="font-weight-bold mb-0">Daftar Sekarang</h2>
+                            <p>Sudah punya akun? <a href="{{ route('login') }}">Login</a> di sini</p>
+                        </div>
                         <form id="form-register" onsubmit="return false;">
                             @csrf
                             <div class="form-group">
@@ -57,7 +54,7 @@
             </div>
         </div>
     </div>
-</main>
+</div>
 @stop
 
 @push('scripts')

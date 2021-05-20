@@ -11,6 +11,14 @@ use App\Models\Kategori;
 
 class ProdukController extends Controller
 {
+
+
+    public function index(Request $request)
+    {
+        $data = Produk::latest()->limit(8)->get();
+        
+        return view('umum.product.index', compact('data'));
+    }
     /**
      * Display a listing of the resource.
      * @return Renderable
@@ -20,7 +28,7 @@ class ProdukController extends Controller
         $produk = Produk::where('slug', $produk)->first();
         $Produkfoto = ProdukFoto::where('produk_id', $produk->id)->get();
         // $mitra = Bisnis::find()
-        return view('umum.produk_detail', compact('produk', 'Produkfoto'));
+        return view('umum.product.detail', compact('produk', 'Produkfoto'));
     }
 
     public function kategori($kategori)
@@ -44,5 +52,23 @@ class ProdukController extends Controller
             'stok' => $produk->stok,
             'total' => "Rp" .number_format($total,0,',','.')
         ]);
+    }
+
+    public function data(Request $request)
+    {
+        // dd($request->all());
+        if($request->order = 'best_seller'){
+            $data = Produk::latest()->limit(8)->get();
+
+        }else if($request->order == 'top_rated'){
+            $data = Produk::latest()->limit(8)->get();
+
+        }else if($request->order === 'recent'){
+
+            $data = Produk::latest()->limit(8)->get();
+        }
+
+        
+        return response()->json($data);
     }
 }
